@@ -11,6 +11,6 @@ print(f'tempo: {tempo}')
 
 prestação = valor / (tempo * 12)
 if prestação > salario*(30/100):
-    print('\033[;31mSeu empréstimo foi negado!\033[m')
+    print(f'\033[;31m  Para pagar uma casa de {valor:.2f} em {tempo} anos a prestação será de R${prestação:.2f}. Seu empréstimo foi NEGADO!  \033[m')
 else:
-    print('\033[;32mSeu empréstimo foi aprovado!\033[m')
+    print(f'\033[;32m  Para pagar uma casa de {valor:.2f} em {tempo} anos a prestação será de R${prestação:.2f}. Seu empréstimo foi APROVADO!  \033[m')
