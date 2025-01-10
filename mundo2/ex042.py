@@ -7,6 +7,12 @@ b = float(input('Segundo segmento: '))
 c = float(input('Terceiro segmento: '))
 
 if a + b > c and b + c > a and c + a > b:
-    print('Pode ser um triângulo!')
+    print('Pode ser um triângulo ', end='')
+    if a == b == c:
+        print('Equilatero!')
+    elif a == b != c or b == c != a or a == c != b:
+        print('Isóceles!')
+    else:
+        print('Escaleno!')
 else:
     print('Não pode ser um triângulo.')
