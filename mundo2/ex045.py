@@ -1,30 +1,36 @@
-import random
+from random import choice
+from time import sleep
 # Banner Principal
 print('-=-'*25)
-print('JoKenPô'.center(75))
-print('=-='*25)
+print('Jo Ken Pô'.center(75))
+print('-=-'*25)
 while True:
     try:
         # Escolha do PC
-        jokenpo = ['Pedra', 'Papel', 'Tesoura']
-        
-        pc = random.choice(jokenpo)
+        jokenpo = ('Pedra', 'Papel', 'Tesoura')
+        pc = choice(jokenpo)
+        print('''Suas opções:
+        [ 0 ] PEDRA
+        [ 1 ] PAPEL
+        [ 2 ] TESOURA''')
 
         # Escolha do player
-        player = str(input('Pedra, Papel ou Tesoura? ')).title()
-
-        # Verifica se a entrada do player é válida
-        if player not in jokenpo:
-            print("Escolha inválida! Tente novamente.")
-            continue
+        player = int(input('Pedra, Papel ou Tesoura? '))
+        print('JO'.center(25))
+        sleep(1)
+        print('KEN'.center(27))
+        sleep(1)
+        print('PO'.center(25))
 
         # Resultado do Jogo
         print('=-='*25)
-        print(f'você: {player} X computador: {pc}'.center(50))
+        print(f'Jogador jogou {jokenpo[player]}')
+        print(f'Computador jogou {pc}')
         print('=-='*25)
-        if (pc == 'Pedra' and player == 'Tesoura') or (pc == 'Papel' and player == 'Pedra') or (pc == 'Tesoura' and player == 'Papel'):
+
+        if (pc == 'Pedra' and player == 2) or (pc == 'Papel' and player == 0) or (pc == 'Tesoura' and player == 1):
             print('Se fudeu, Game Over')
-        elif (player == 'Pedra' and pc == 'Tesoura') or (player == 'Papel' and pc == 'Pedra') or (player == 'Tesoura' and pc == 'Papel'):
+        elif (player == 0 and pc == 'Tesoura') or (player == 1 and pc == 'Pedra') or (player == 2 and pc == 'Papel'):
             print('Parabéns! Você Ganhou!')
         else:
             print('Cagada ein, Empate!')
