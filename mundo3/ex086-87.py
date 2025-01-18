@@ -1,10 +1,5 @@
-'''criar matriz 3x3 e preencher com valores lidos pelo teclado
-mostrar matriz na tela com formatação correta
-
-mostrar a soma dos valores pares
-a soma dos valores da terceira coluna
-o maior valor da segunda linha'''
 matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+spar = mai = scol = 0
 for l in range(0, 3):
     for c in range(0, 3):
         matriz[l][c] = int(input(f'Digite um valor para [{l}, {c}]: '))
@@ -12,11 +7,17 @@ print('-=-'*20)
 for l in range(0, 3):
     for c in range(0, 3):
         print(f'[{matriz[l][c]:^5}]', end='')
+        if matriz[l][c] % 2 == 0:
+            spar += matriz[l][c]
     print()
-
-    '''for p, v in enumerate(l):
-        if v % 2 == 0:
-            somapar += v
-    if p == 2:
-        somacoluna += v
-'''
+for l in range(0, 3):
+    scol += matriz[l][2]
+for c in range(0, 3):
+    if c == 0 :
+        mai = matriz[1][c]
+    elif matriz[1][c] > mai:
+        mai = matriz[1][c]
+print('-=-'*20)
+print(f'A soma dos valores pares é: {spar} .')
+print(f'A soma dos valores da terceira coluna é: {scol} .')
+print(f'O maior valor da segunda linha é: {mai} .')
