@@ -1,4 +1,3 @@
-Nathan;24
-Gabriel;25
-Farias;26
-Pinheiro;27
+Nathan;25
+josé;10
+joão;45
