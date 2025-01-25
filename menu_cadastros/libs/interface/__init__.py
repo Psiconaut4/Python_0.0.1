@@ -25,6 +25,7 @@ def cabeçalho(txt):
     print(txt.center(42))
     print(linha())
 
+
 def menu(lista):
     print('-'*42)
     print('{:^42}'.format('MENU PRINCIPAL'))
@@ -34,7 +35,7 @@ def menu(lista):
     for item in lista:
         print(f'\033[;33m{c} -\033[m \033[;34m{item}\033[m')
         c += 1
-        sleep(0.5)
     print('-'*30)
+    sleep(0.5)
     r = leiaInt('\033[;34mSua Opção: \033[m')
     return r
